@@ -1,7 +1,8 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=41b883&height=250&section=header&text=Vue-js%20&fontSize=90&fontAlignY=40&fontColor=35495e&animation=twinkling)
 ## Vue.js Learning
 
-💻 Vue.js의 기초 학습
+### 💻 Vue.js의 기초 학습
+
 - 개발 환경 설정
 
 - 인스턴스의 이해
@@ -25,3 +26,11 @@
 - 싱글 파일 컴포넌트 
 
 - 사용자 입력 폼 구현
+
+
+
+### 🤝 형상관리 Tool
+
+- GIT
+
+- SourceTree
