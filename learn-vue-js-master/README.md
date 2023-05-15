@@ -1,11 +1,27 @@
-# Vue.js 시작하기
+![header](https://capsule-render.vercel.app/api?type=waving&color=41b883&height=300&section=header&text=Vue-js%20&fontSize=90&fontAlignY=40&fontColor=35495e)
+## Vue.js Learning
 
-[Vue.js 시작하기 인프런 강의](https://www.inflearn.com/course/Age-of-Vuejs) 리포지토리입니다.
+💻 Vue.js의 기초 학습
+- 개발 환경 설정
 
-![인프런 Vue.js 시작하기 강의 썸네일](https://cdn.inflearn.com/public/courses/324088/course_cover/ac203578-d458-44f4-b273-81cb719a89b0/lv1.png)
+- 인스턴스의 이해
 
-## License & Copyright
+- 컴포넌트의 이해
 
-**Copyright © 2021 Captain Pangyo**
+- 컴포넌트 통신 방법 - 기초
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License</a>.
+- 컴포넌트 통신 방법 - 응용
+
+- 라우터의 이해
+
+- HTTP 통신 라이브러리 _ axios
+
+- 템플릿 문법 - 기초
+
+- 템플릿 문법 - 실전
+
+- 프로젝트 생성도구(Vue CLI) 사용
+
+- 싱글 파일 컴포넌트 
+
+- 사용자 입력 폼 구현
