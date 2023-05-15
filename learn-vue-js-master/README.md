@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=41b883&height=300&section=header&text=Vue-js%20&fontSize=90&fontAlignY=40&fontColor=35495e)
+![header](https://capsule-render.vercel.app/api?type=waving&color=41b883&height=250&section=header&text=Vue-js%20&fontSize=90&fontAlignY=40&fontColor=35495e&animation=twinkling)
 ## Vue.js Learning
 
 💻 Vue.js의 기초 학습
