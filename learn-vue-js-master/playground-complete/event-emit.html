@@ -8,11 +8,9 @@
 </head>
 <body>
   <div id="app">
-    <app-header></app-header>
-    <!-- <p>{{ num }}</p> -->
     <!-- <app-header v-on:하위 컴포넌트에서 발생한 이벤트 이름="상위 컴포넌트의 메서드 이름"></app-header> -->
-    <!-- <app-header v-on:pass="logText"></app-header>
-    <app-content v-on:increase="increaseNumber"></app-content> -->
+    <app-header @pass="logText"></app-header> <p>{{ hiText }}</p>  <br />
+    <app-content @increase="incNumber"></app-content> <p>{{ num }}</p>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -22,30 +20,13 @@
       template: '<button @click="passEvent">click me</button>',
       methods: {
         passEvent: function() {
-          this.$emit('pass');
+          this.$emit('pass');   //emit은 vue에서 제공해주는 api(기능) - 상위 컴포넌트에 event를 넘긴다.
+          //이벤트 이름 : pass
         }
       }
-    }
-
-    new Vue({
-      el: '#app',
-      components: {
-        'app-header': appHeader
-      }
-    });
-
-
-
-    /* var appHeader = {
-      template: '<button v-on:click="passEvent">click me</button>',
-      methods: {
-        passEvent: function() {
-          this.$emit('pass');
-        }
-      }
-    }
+    }    
     var appContent = {
-      template: '<button v-on:click="addNumber">add</button>',
+      template: '<button @click="addNumber">add</button>',
       methods: {
         addNumber: function() {
           this.$emit('increase');
@@ -53,24 +34,31 @@
       }
     }
 
-    var vm = new Vue({
+    new Vue({
       el: '#app',
       components: {
         'app-header': appHeader,
-        'app-content': appContent
+        'app-content' : appContent
+      },
+      data: {
+        num: 10,
+        hello: [],
+        hiText: ""
       },
       methods: {
         logText: function() {
-          console.log('hi');
+          this.hiText = '';
+          this.hello.push('hi');
+          this.hello.forEach(item => {
+            this.hiText += item + `\n`;
+          });
         },
-        increaseNumber: function() {
-          this.num = this.num + 1;
+        incNumber: function() {
+          return this.num++;
         }
       },
-      data: {
-        num: 10
-      }
-    }); */
+      
+    });
   </script>
 </body>
 </html>
