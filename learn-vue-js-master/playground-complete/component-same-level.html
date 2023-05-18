@@ -8,20 +8,19 @@
 </head>
 <body>
   <div id="app">
-    <app-header v-bind:propsdata="num"></app-header>
-    <app-content v-on:pass="deliverNum"></app-content>
+    <app-header></app-header>
+    <app-content></app-content>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     var appHeader = {
-      template: '<div>header</div>',
-      props: ['propsdata']
+      template: '<div>header</div>'
     }
     var appContent = {
-      template: '<div>content<button v-on:click="passNum">pass</button></div>',
+      template : '<div>content <button @click="passNum"> PASS </button></div>',
       methods: {
-        passNum: function() {
+        passNum : function() {
           this.$emit('pass', 10);
         }
       }
@@ -33,15 +32,11 @@
         'app-header': appHeader,
         'app-content': appContent
       },
-      data: {
-        num: 0
-      },
-      methods: {
-        deliverNum: function(value) {
-          this.num = value;
-        }
+      //appHeader와 appContent의 상위폴더인 인스턴스에 data를 생성해줘야 이벤트를 받고, props로 내리는 것이 가능하다.
+      data: {   
+        num : 0,
       }
-    })
+    });
   </script>
 </body>
 </html>
