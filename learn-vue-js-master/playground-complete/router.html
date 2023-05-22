@@ -14,8 +14,25 @@
   <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script><!-- vue router -->
   <!-- vue.js가 먼저 호출되고, 라우터를 써주어야 한다. -->
   <script>
-    var router = new VueRouter({  // 페이지의 라우팅 정보
+    var LoginComponent = {
+      template: '<div>login</div>'
+    }
+    var MainComponent = {
+      template: '<div>main</div>'
+    }
+    
+    var router = new VueRouter({ 
 
+      routes: [   // 페이지의 라우팅 정보가 배열로 담겨있음. 페이지에 개수마다 객체의 개수가 늘어남
+        {
+          path: '/login',   // 페이지의 url 이름
+          component: LoginComponent,   //해당 url에서 표시될 컴포넌트
+        },
+        {
+          path: '/main',
+          component: MainComponent
+        }
+      ], 
     });
 
     new Vue({
