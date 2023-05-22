@@ -8,7 +8,7 @@
 </head>
 <body>
   <div id="app">
-    
+    <router-view></router-view>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script><!-- vue.js 스크립트 -->
   <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script><!-- vue router -->
@@ -26,15 +26,16 @@
       // 페이지의 라우팅 정보가 배열로 담겨있음. 페이지에 개수마다 객체의 개수가 늘어남
       routes: [ 
         // { 페이지의 url 이름,  해당 url에서 표시될 컴포넌트 }
-        { path: '/login', component: LoginComponent },
-        { path: '/main', component: MainComponent }
+        { path: '/login', component: LoginComponent },  // 로그인 페이지 정보
+        { path: '/main', component: MainComponent }     // 메인  페이지 정보
       ], 
     });
 
     new Vue({
       el: "#app",
       router: router, //router라는 것은 create, watch 처럼 vue에서 제공해주는 것이다.
-    });    
+    });
+
   </script>
 </body>
 </html>
