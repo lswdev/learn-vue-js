@@ -23,15 +23,11 @@
     
     var router = new VueRouter({ 
 
-      routes: [   // 페이지의 라우팅 정보가 배열로 담겨있음. 페이지에 개수마다 객체의 개수가 늘어남
-        {
-          path: '/login',   // 페이지의 url 이름
-          component: LoginComponent,   //해당 url에서 표시될 컴포넌트
-        },
-        {
-          path: '/main',
-          component: MainComponent
-        }
+      // 페이지의 라우팅 정보가 배열로 담겨있음. 페이지에 개수마다 객체의 개수가 늘어남
+      routes: [ 
+        // { 페이지의 url 이름,  해당 url에서 표시될 컴포넌트 }
+        { path: '/login', component: LoginComponent },
+        { path: '/main', component: MainComponent }
       ], 
     });
 
