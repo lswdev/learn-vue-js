@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Router</title>
 </head>
 <body>
   <div id="app">
@@ -14,13 +14,13 @@
   <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script><!-- vue router -->
   <!-- vue.js가 먼저 호출되고, 라우터를 써주어야 한다. -->
   <script>
-    new VueRouter({
+    var router = new VueRouter({  // 페이지의 라우팅 정보
 
     });
 
     new Vue({
-      el: "app",
-
+      el: "#app",
+      router: router, //router라는 것은 create, watch 처럼 vue에서 제공해주는 것이다.
     });    
   </script>
 </body>
