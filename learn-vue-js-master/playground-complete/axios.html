@@ -9,6 +9,7 @@
 <body>
   <div id="app">
     <button @click="getData">getUser</button>
+    <div>{{ users }}</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -16,14 +17,20 @@
   <script>
     new Vue({
       el: '#app',
+      data: {
+        users: [],
+      },
       methods: {
-        getData: function( ){
+        getData: function(){
+          // console.dir(this); //  여기에서 호출한 this는 밑에 호출한 this와 다르다.  : 위의 인스턴스나 컴포넌트를 바라보는 this
+          var vm = this;
           axios.get('https://jsonplaceholder.typicode.com/users/')
           .then(function(response) {
-            console.log(response);
+            // console.dir(this); //이곳에서의 this는 axios를 호출하기 전의 this와 다르다 : 비동기 처리를 했을 때 실행 컨텍스트가 바뀌면서 바뀐다.
+            vm.users = response.data;
           })
           .catch(function(error){
-            console.log(error)
+            console.dir(error)
           });
         }
       },
