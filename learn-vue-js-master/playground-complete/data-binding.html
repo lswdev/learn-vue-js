@@ -4,20 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>데이터 바인딩</title>
+  <title>데이터 바인딩 / 디렉티브</title>
 </head>
 <body>
-  <div id="app"></div>
-
+  <div id="app">
+    <div>{{ str }}</div>
+    <p v-bind:id="uuid">{{ num }}</p>
+    <p v-bind:class="name" v-if="doubleNum > 100">{{ doubleNum }}</p>
+    <p v-else>{{ doubleNum }}</p>
+    <div v-if="loading">
+      Loading...
+    </div>
+    <div v-else>
+      test user has been logged in
+    </div>
+    <!-- 
+      !!!! v-show 와 v-if 의 차이점 !!!!  
+      v-show는 DOM 자체에서 display:none 처리(DOM은 남아있다.)를 하지만 
+      v-if는 아예 삭제처리.  -->
+    <div v-show="loading">
+      Loading...
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     new Vue({
       el: '#app',
       data: {
+        str: 'hello',
+        num: Math.floor(Math.random()*100),
+        uuid: 'abc1234',
+        name: 'text-red',
+        loading: true,  //로딩중인 상태
       },
-      computed: {
+      computed: {   // 계산된 속성
+        doubleNum : function(){
+          return this.num * 2;
+        }
       }
     })
   </script>
+  <style>
+    .text-red {
+      color: red;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  </style>
 </body>
 </html>
