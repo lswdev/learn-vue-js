@@ -8,21 +8,26 @@
 </head>
 <body>
   <div id="app">
-    <button v-on:click="logText">click me</button>
-    <input type="text" v-on:keyup.enter="logText">
+    <button @click="logText">Click Me</button>
+    <input type="text" @keyup.enter="logText">
+    <!-- 
+      @keyup : 키가 눌렸다 떼질 때 실해된다.
+      @keyup.enter : 엔터 키를 눌렀을 때 실행된다.  (event modifier)
+    -->
     <button>add</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
-    new Vue({
+    new Vue ({
       el: '#app',
+      data: {},
       methods: {
-        logText: function() {
+        logText: function(){
           console.log('clicked');
         }
-      }
-    })
+      },
+    });
   </script>
 </body>
 </html>
