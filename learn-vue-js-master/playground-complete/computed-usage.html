@@ -6,21 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
-  .warning {
-    color: red;
-  }
+  .warning { color: red; }
   </style>
 </head>
 <body>
   <div id="app">
-
+    <!-- <p :class="cname">Hello</p> -->
+    <!-- <p :class="{ warning: isError }">Hello</p> -->
+    <p :class="errorTextColor">Hello</p>
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     new Vue({
       el: '#app',
-      
+      data: {
+        // cname: 'blue-text',
+        isError: true,
+      },
+      computed: {
+        errorTextColor: function(){
+          return this.isError ? 'warning' : null;
+        }
+      },
     });
   </script>
 </body>
