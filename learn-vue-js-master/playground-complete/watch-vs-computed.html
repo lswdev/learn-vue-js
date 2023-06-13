@@ -8,7 +8,8 @@
 </head>
 <body>
   <div id="app">
-    {{ num }}
+    {{ num }} <br />
+    {{doubleNum}}
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -18,17 +19,17 @@
       data: {
         num: 10
       },
-      computed: {
+      computed: {   // 단순한 텍스트의 입력을 받아서 그 것에 대한 validation 값을 체크할 때 많이 쓰인다.
         doubleNum: function() {
           return this.num * 2;
         }
       },
-      watch: {
+      watch: {    // 무거운 로직을 체크할 때 위주로 쓰인다.
         num: function(newValue, oldValue) {
-          this.fetchUserByNumber(newValue);
+          this.fetchUserByNumber(newValue);   // Number 값에 따라 다시 불러오는 로직
         }
       },
-      methods: {
+      methods: {  // 데이터를 요청하는 부분
         fetchUserByNumber: function(num) {
           // console.log(num);
           axios.get(num);
