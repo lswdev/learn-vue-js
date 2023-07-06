@@ -1,17 +1,21 @@
 <template>
   <div>
-    {{ str }}
+    <app-header :propsdata="str"></app-header>
   </div>
 </template>
 
 <script>
+import AppHeader from './components/AppHeader.vue';
+
 export default {
   data: function() {
     return {
-      str: 'hi'
+      str: 'Header'
     }
+  },
+  components: {
+    'app-header': AppHeader
   }
-
 }
 </script>
 
