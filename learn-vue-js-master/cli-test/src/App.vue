@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <!-- 
+      - 컴포넌트 명명법
       1. <hello-world></hello-world>
       2. <HelloWorld></HelloWorld>
       3. <HelloWorld/>
@@ -15,7 +16,8 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
-export default {
+
+export default { //인스턴스 옵션 속성 or 컴포넌트 옵션 속성
   name: 'App',
   components: {
     HelloWorld
