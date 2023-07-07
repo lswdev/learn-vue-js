@@ -54,7 +54,8 @@ export default {
 
 /* 
   npm i axios 
-  
+  에러 뜬다면 
+  npm uninstall axios 후 npm i axios 실행.
 */
 </script>
 <style lang="">
